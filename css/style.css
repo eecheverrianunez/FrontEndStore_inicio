@@ -177,13 +177,22 @@ h3 {
 /**Nosotros**/
 .nosotros {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, auto1fr);
+}
+@media (min-width: 768px) {
+    .nosotros {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
 }
 
-.nosotros__contenido {
-
-}
 
 .nosotros__imagen {
-
+    grid-row: 1 / 2; /*Coloca la imagen arriba cuando se vea en pantalla pequeña*/
+    width: 100%;
+}
+@media (min-width: 768px) {
+    .nosotros__imagen {
+        grid-column: 2 / 3; /*para que se ubique la foto en el lado derecho en pantalla grande*/
+    }
 }
